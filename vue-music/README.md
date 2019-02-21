@@ -4,6 +4,9 @@
 
 * [Vue](https://cn.vuejs.org/)
 * [Vue Router](https://router.vuejs.org/zh/)
+* [Mint UI](饿了么基于Vue.js的移动端组件库)
+* [mockjs（数据模拟）](http://mockjs.com/)
+* [axios（请求库）](https://github.com/axios/axios)
 
 ## 安装运行
 
