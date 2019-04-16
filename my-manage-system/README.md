@@ -5,9 +5,9 @@
 ## 常用命令
 
 ```js
-//Project setup && launch the server
-yarn install
-yarn run serve
+yarn install   //Project setup
+yarn run serve //启动开发模式
+yarn run start //启动node服务
 
 //Compiles and minifies for production
 yarn run build

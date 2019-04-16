@@ -26,7 +26,6 @@ function saveBill(object) {
   });
 }
 
-
 function getBills(callback) {
   billModel.find( {'money': { "$lte": 0 }}, {money:1, desc:1 }, function(err,docs){
     callback(docs);
