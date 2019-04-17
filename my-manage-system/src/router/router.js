@@ -13,12 +13,10 @@ export default new Router({
     {
       path: '/login',
       component: Login
-    }  
-    // },
-    // {
-    //   // path: '/about',
-    //   // name: 'about',
-    //   // component: () => import('../views/About.vue')
-    // }
+    },  
+    {
+      path: '/home',
+      component: () => import('../views/Home.vue')
+    }
   ]
 })

@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <el-form :model="loginForm" :rules="rules" ref="loginForm" label-width="50px">
+    <el-form :model="loginForm" :rules="rules" ref="loginForm" label-width="50px" @submit.native.prevent>
       <el-form-item label="账号" prop="account">
         <el-input v-model="loginForm.account" placeholder="admin"></el-input>
       </el-form-item>
@@ -8,7 +8,7 @@
         <el-input v-model="loginForm.password" type="password" placeholder="000000"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
+        <el-button type="primary" @click="submitForm('loginForm')" native-type="submit">登录</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -38,7 +38,13 @@ export default {
   methods: {
     async login(data) {
       let res = await login(data);
-      alert("登录成功")
+      if (res.length > 0) {
+        this.$router.push({ 
+          path: 'home' 
+        })
+      } else {
+        this.$message.error('账号或密码错误！');
+      }
     },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {

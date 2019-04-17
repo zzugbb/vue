@@ -8,7 +8,7 @@ function connectMongoose(dbName) {
   
   const db = mongoose.connection;
 
-  //如果连接成功会执行error回调
+  //如果连接失败会执行error回调
   db.once("error", function (error) {
     console.log("数据库 " + dbName + " 连接失败：" + error);
   });
