@@ -7,12 +7,13 @@ export function convertUTCTimeToLocalTime(UTCDateString) {
   var year = date2.getFullYear();
   var mon = formatFunc(date2.getMonth() + 1);
   var day = formatFunc(date2.getDate());
-  var hour = date2.getHours();
-  var noon = hour >= 12 ? 'PM' : 'AM';
-  hour = hour>=12?hour-12:hour;
-  hour = formatFunc(hour);
+  var hour = formatFunc(date2.getHours());
+  // var noon = hour >= 12 ? 'PM' : 'AM';
+  // hour = hour>=12?hour-12:hour;
+  // hour = formatFunc(hour);
   var min = formatFunc(date2.getMinutes());
-  var dateStr = year+'-'+mon+'-'+day+' '+noon +' '+hour+':'+min;
+  //var dateStr = year+'-'+mon+'-'+day+' '+ noon +' '+hour+':'+min;
+  var dateStr = year+'-'+mon+'-'+day + '  ' +hour+':'+min;
   return dateStr;
 }
 
