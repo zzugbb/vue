@@ -14,7 +14,7 @@ router.get('/savebill', function(req, res, next) {
 
 
 /* getbill */
-router.get('/getbill', function(req, res, next) {
+router.get('/getbills', function(req, res, next) {
   bill.getBills( function(docs) {
     res.send(docs);
   })

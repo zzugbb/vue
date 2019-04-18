@@ -27,7 +27,7 @@ function saveBill(object) {
 }
 
 function getBills(callback) {
-  billModel.find( {'money': { "$lte": 0 }}, {money:1, desc:1 }, function(err,docs){
+  billModel.find( {'type': { "$gte": 1 }}, {money: 1, desc:1, type: 1, time: 1 }, function(err,docs){
     callback(docs);
   })
 }

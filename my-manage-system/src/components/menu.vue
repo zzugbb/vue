@@ -1,12 +1,13 @@
 <template>
   <el-menu
-    default-active="1"
+    router
+    default-active="/home/bill-list"
     class="el-menu-vertical-demo"
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
     :collapse="menuCollapse"
-    style="height:100vh;background-color:#545c64"
+    style="height:100vh; background-color:#545c64"
     >
     <el-menu-item style="height:120px;">
       <template>
@@ -19,16 +20,16 @@
         </div>  
       </template>
     </el-menu-item>
-    <el-menu-item index="1">
-      <i class="el-icon-location"></i>
+    <el-menu-item index="/home/bill-list" >
+      <i class="fa fa-credit-card menu-icon" aria-hidden="true"></i>
       <span>账单列表</span>
     </el-menu-item>
-    <el-menu-item index="2">
-      <i class="el-icon-menu"></i>
+    <el-menu-item index="/home/bill-add">
+      <i class="fa fa-paypal menu-icon" aria-hidden="true"></i>
       <span slot="title">账单新增</span>
     </el-menu-item>
-    <el-menu-item index="4">
-      <i class="el-icon-setting"></i>
+    <el-menu-item index="/home/my">
+      <i class="fa fa-user-circle menu-icon" aria-hidden="true"></i>
       <span slot="title">我的</span>
     </el-menu-item>
   </el-menu>
@@ -64,6 +65,14 @@ export default {
     height: 30px;
     border-radius: 50%;
   }
+}
+
+.menu-icon {
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 </style>
 

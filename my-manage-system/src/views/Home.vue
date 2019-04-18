@@ -10,6 +10,9 @@
           <img src="../assets/menu-close.png" @click="menuCollapse()" v-show="isCollapse">
           <el-button class="login-out" @click="loginOut()">退出</el-button>
         </div>
+        <div style="margin:20px;">
+          <router-view/>
+        </div>
       </el-col> 
     </el-row>
   </div>
