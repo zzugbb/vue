@@ -45,7 +45,6 @@ export default {
         res[i].time = convertUTCTimeToLocalTime(res[i].time)
       }
       this.tableData = res;
-      console.log(res)
     }
   }
 }
