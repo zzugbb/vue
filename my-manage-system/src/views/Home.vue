@@ -8,7 +8,7 @@
         <div class="header">
           <img src="../assets/menu-open.png" @click="menuCollapse()" v-show="!isCollapse">
           <img src="../assets/menu-close.png" @click="menuCollapse()" v-show="isCollapse">
-          <el-button class="login-out">退出</el-button>
+          <el-button class="login-out" @click="loginOut()">退出</el-button>
         </div>
       </el-col> 
     </el-row>
@@ -32,6 +32,11 @@ export default {
   methods: {
     menuCollapse() {
       this.isCollapse = ! this.isCollapse
+    },
+    loginOut() {
+      this.$router.push({ 
+        path: '/' 
+      })
     }
   }
 }
