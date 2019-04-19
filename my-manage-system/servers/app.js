@@ -9,14 +9,14 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use(cookieParser());
 
 //设置静态资源目录
-app.use(express.static(path.join(__dirname, './dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
-app.use('/bill', require('./routes/bill'));
-app.use('/login', require('./routes/login'));
+app.use('/api/bill', require('./routes/bill'));
+app.use('/api/login', require('./routes/login'));
 
 //所有访问，都指定返回 index.html
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, './dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
 //设置服务器

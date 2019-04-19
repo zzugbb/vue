@@ -6,9 +6,9 @@ module.exports = {
         target: "http://localhost:3001",
         ws: true,
         changeOrigin: true,
-        pathRewrite: {
-          '^/api': '', // rewrite path
-        },
+        // pathRewrite: {
+        //   '^/api': '', // rewrite path
+        // },
       }
     },
   }
