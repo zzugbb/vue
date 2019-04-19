@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
+var mongoose = require("mongoose");
 var connectMongoose = require("../mongoose").connectMongoose
-var mongoose = connectMongoose("admin");
+var db = connectMongoose("admin");
 
 //定义一个 schema,描述此集合里有哪些字段，字段是什么类型
 //只有schema中有的属性才能被保存到数据库中
@@ -10,7 +11,7 @@ var adminSchema = new mongoose.Schema({
   time : { type: Date, default: Date.now },
 });
 
-var adminModel = mongoose.model("person", adminSchema);
+var adminModel = db.model("person", adminSchema);
 
 function selectAdmin(data, callback) {
   adminModel.find({
