@@ -55,6 +55,19 @@ export default {
       ]
     };
   },
+  watch: {
+    'form.textContent': function(val, oldVal) {
+      console.log(val);
+      for (let i = 0; i < this.tags.length; i++) {
+        let tempContent = "{" + this.tags[i].name + "}";
+        if (val.indexOf(tempContent) > -1) {
+          this.tags[i].closable = true;
+        } else {
+          this.tags[i].closable = false;
+        }
+      }
+    }
+  },
   methods: {
     handleClickTag(tag) {
       if (tag.closable) { // 选中状态
@@ -77,13 +90,17 @@ export default {
         this.form.textLabel = this.form.textLabel.replace(tempContent, tempLabel);
       }
     },
+    //点击编辑保存
+    handleClickEdit() {
+      if (!this.form.readonly) { //保存
+        console.log(this.form.textContent) //一些校验
+      }
+      this.form.readonly = ! this.form.readonly;
+    },
     submit() {
       this.contentToLabel();
       console.log(this.form.textContent);
       console.log(this.form.textLabel);
-    },
-    handleClickEdit() {
-      this.form.readonly = ! this.form.readonly;
     },
     /**
      * 在textarea光标处插入内容
